@@ -1,0 +1,15 @@
+#tabelas table,
+#tabelas th,
+#tabelas td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+body{
+    background-color: rgb(209, 208, 207);
+}
+
+#inicio{
+    text-align: center;
+}
