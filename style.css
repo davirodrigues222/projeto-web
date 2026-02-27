@@ -4,12 +4,35 @@
     border: 1px solid black;
     border-collapse: collapse;
     padding: 5px;
+    text-align: center;
 }
 
-body{
-    background-color: rgb(209, 208, 207);
+#tabelas table {
+    margin: 0 auto;
 }
 
-#inicio{
+#lista {
+    font-size: 18px;
+    margin-top: 5px;
+    display: inline-block;
+    text-align: left;
+    padding-left: 20px;
+}
+
+
+h1, h2, h3 {
+    color: white;
+}
+
+#descri {
+    color: rgb(200, 200, 200);
+}
+
+body {
+    text-align: center;
+    background-color: rgb(84, 75, 172);
+}
+
+#inicio {
     text-align: center;
 }
