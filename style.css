@@ -20,7 +20,7 @@
 }
 
 
-h1, h2, h3 {
+h1, h2{
     color: white;
 }
 
@@ -30,7 +30,7 @@ h1, h2, h3 {
 
 body {
     text-align: center;
-    background-color: rgb(84, 75, 172);
+    background-color: rgb(20, 182, 68);
 }
 
 #inicio {
