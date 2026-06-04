@@ -6,11 +6,36 @@ const projetos = [
         descricao: 'Marketplace focado em microempreendedores',
         ano: '2026 (Atual)'
     },
+
+    {
+        nome: 'Di-Poly-Opticus',
+        descricao: 'Site Para Compra e estilização de oculos.',
+        ano: '2026'
+    },
+
     {
         nome: 'Vidioteca Unifor',
         descricao: 'Organização e controle de acervo digital e audiovisual.',
         ano: '2025'
-    }
+    },
+
+    {
+        nome: 'NARAA',
+        descricao: 'Loja virtual de roupas femininas.',
+        ano: '2025'
+    },
+
+    {
+        nome: 'CloudQuiz',
+        descricao: 'mini-game de perguntas e respostas sobre Software em Nuvem.',
+        ano: '2025'
+    },
+
+    {
+        nome: 'Jogo da Forca',
+        descricao: 'Jogo Simples web jogo da forca.',
+        ano: '2025'
+    },
 ]
 
     function Projects(){
