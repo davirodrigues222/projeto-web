@@ -1,0 +1,81 @@
+section {
+  padding: 60px 20px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+/* Hero */
+section:first-child h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+section:first-child h2 {
+  font-size: 1.2rem;
+  color: #a78bfa;
+  margin-bottom: 16px;
+}
+
+section:first-child p {
+  color: #9ca3af;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* Skills */
+h2 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+ul li {
+  background: #1e1e2e;
+  color: #a78bfa;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid #3b3b5c;
+}
+
+/* Projects */
+section div {
+  background: #1a1a2e;
+  border: 1px solid #2a2a4a;
+  border-radius: 12px;
+  padding: 24px;
+  cursor: pointer;
+  max-width: 400px;
+}
+
+section div h3 {
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+section div p {
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+section div span {
+  color: #a78bfa;
+  font-size: 0.9rem;
+}
+
+/* Contact */
+section a {
+  color: #a78bfa;
+  text-decoration: none;
+}
+
+section a:hover {
+  text-decoration: underline;
+}

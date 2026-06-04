@@ -14,6 +14,7 @@ function Skills(){
                     whileInView={{opacity: 1, x: 0}}
                     transition={{duration: 0.4, delay: index * 0.15}}
                     viewport={{once: true}}
+                    whileHover={{ scale: 1.07 }}
                     >
                     {item}
                     </motion.li>
