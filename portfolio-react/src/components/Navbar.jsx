@@ -15,10 +15,10 @@ function Navbar(){
         <nav className={scrolled ? 'nav-scrolled' : 'nav-top'}>
             <span>Davi Rodrigues</span>
             <ul>
-                <li><a href="#inicio"></a></li>
-                <li><a href="#skills"></a></li>
-                <li><a href="#projetos"></a></li>
-                <li><a href="#contato"></a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     )

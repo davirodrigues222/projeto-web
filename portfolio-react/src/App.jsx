@@ -14,6 +14,9 @@ function App() {
       <Skills />
       <Projects />
       <Contact />
+      <footer>
+        <p>© 2026 - Davi Rodrigues Monteiro Sampaio</p>
+      </footer>
     </div>
   )
 }

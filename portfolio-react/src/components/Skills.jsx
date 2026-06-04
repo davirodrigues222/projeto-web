@@ -4,7 +4,7 @@ const habilidades = ['javaScript', 'Java', 'Front-end', 'Versionamento (GitHub)'
 
 function Skills(){
     return (
-        <section>
+        <section id="skills">
             <h2>Conhecimentos</h2>
             <ul>
                 {habilidades.map((item, index) => (

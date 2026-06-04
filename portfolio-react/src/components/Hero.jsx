@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 function Hero() {
     return (
-        <motion.section
+        <motion.section id="inicio"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{duration: 0.8}}

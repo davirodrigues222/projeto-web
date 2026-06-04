@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 function Contact() {
     return (
-        <motion.section
+        <motion.section id="contato"
             initial={{ opacity: 0}}
             whileInView={{opacity: 1}}
             transition={{duration: 0.8}}

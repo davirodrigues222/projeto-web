@@ -15,7 +15,7 @@ const projetos = [
 
     function Projects(){
         return(
-            <section>
+            <section id="projetos">
                 <h2>Projetos</h2>
                 {projetos.map((projeto, index) => (
                     <motion.div
