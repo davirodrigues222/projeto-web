@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumo - Portfolio React com Framer Motion</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .capa {
+      background: linear-gradient(135deg, #6d28d9, #a78bfa);
+      color: white;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .capa h1 { font-size: 2.2rem; margin-bottom: 10px; }
+    .capa p { font-size: 1.1rem; opacity: 0.9; }
+    .capa .meta { margin-top: 20px; font-size: 0.95rem; opacity: 0.8; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 30px; }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #6d28d9;
+      border-left: 4px solid #a78bfa;
+      padding-left: 12px;
+      margin: 40px 0 16px;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      color: #1a1a1a;
+      margin: 24px 0 8px;
+    }
+
+    p { margin-bottom: 12px; color: #333; }
+
+    pre {
+      background: #1e1e2e;
+      color: #cdd6f4;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 12px 0 20px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    code {
+      background: #f3f0ff;
+      color: #6d28d9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    .destaque {
+      background: #f3f0ff;
+      border-left: 4px solid #a78bfa;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+    }
+
+    .requisito {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .check { color: #16a34a; font-weight: bold; font-size: 1.1rem; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+
+    th {
+      background: #6d28d9;
+      color: white;
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    tr:nth-child(even) td { background: #f9f7ff; }
+
+    .secao { page-break-inside: avoid; }
+
+    hr { border: none; border-top: 2px solid #e5e7eb; margin: 40px 0; }
+
+    .rodape {
+      background: #f3f0ff;
+      text-align: center;
+      padding: 30px;
+      color: #6d28d9;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    @media print {
+      .capa { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      pre { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="capa">
+  <h1>Portfolio Profissional com React</h1>
+  <p>Animações Avançadas com Framer Motion</p>
+  <div class="meta">Davi Rodrigues Monteiro Sampaio &nbsp;|&nbsp; UNIFOR — ADS &nbsp;|&nbsp; 2026</div>
+</div>
+
+<div class="container">
+
+  <!-- ÍNDICE -->
+  <h2>Índice</h2>
+  <ol style="padding-left: 20px; line-height: 2.2;">
+    <li>O que é React e como funciona</li>
+    <li>Estrutura do projeto (Vite)</li>
+    <li>O que é um Componente</li>
+    <li>O que é o Framer Motion</li>
+    <li>Componentes criados</li>
+    <li>Animações utilizadas</li>
+    <li>Conceitos React aprendidos</li>
+    <li>Requisitos da atividade atendidos</li>
+    <li>Código completo de cada componente</li>
+  </ol>
+
+  <hr>
+
+  <!-- 1. REACT -->
+  <div class="secao">
+    <h2>1. O que é React e como funciona</h2>
+    <p>React é uma biblioteca JavaScript para construir interfaces de usuário. Em vez de escrever um único arquivo HTML gigante, você divide a página em <strong>componentes</strong> — pedaços reutilizáveis de interface.</p>
+
+    <div class="destaque">
+      <strong>Conceito central:</strong> No React, a interface é descrita como funções JavaScript que retornam JSX (que parece HTML, mas é JavaScript).
+    </div>
+
+    <h3>JSX — HTML dentro do JavaScript</h3>
+    <p>JSX é a sintaxe que o React usa. Parece HTML mas tem algumas diferenças:</p>
+    <pre>
+// HTML normal:
+&lt;div class="container"&gt;Olá&lt;/div&gt;
+
+// JSX (React):
+&lt;div className="container"&gt;Olá&lt;/div&gt;
+// Diferença: "class" vira "className" no JSX</pre>
+  </div>
+
+  <hr>
+
+  <!-- 2. ESTRUTURA -->
+  <div class="secao">
+    <h2>2. Estrutura do Projeto (Vite)</h2>
+    <p>Criamos o projeto com o Vite, que é a forma moderna de iniciar um projeto React:</p>
+    <pre>npm create vite@latest portfolio-react -- --template react
+cd portfolio-react
+npm install
+npm run dev</pre>
+
+    <h3>Pastas importantes:</h3>
+    <table>
+      <tr><th>Pasta/Arquivo</th><th>Para que serve</th></tr>
+      <tr><td><code>src/</code></td><td>Todo o código que você escreve fica aqui</td></tr>
+      <tr><td><code>src/App.jsx</code></td><td>Componente principal — organiza todos os outros</td></tr>
+      <tr><td><code>src/main.jsx</code></td><td>Ponto de entrada — "liga" o React na página</td></tr>
+      <tr><td><code>src/components/</code></td><td>Pasta com os componentes criados</td></tr>
+      <tr><td><code>src/assets/</code></td><td>Imagens e arquivos estáticos</td></tr>
+      <tr><td><code>public/</code></td><td>Favicon e arquivos públicos</td></tr>
+      <tr><td><code>index.css</code></td><td>CSS global da aplicação</td></tr>
+      <tr><td><code>App.css</code></td><td>CSS dos componentes</td></tr>
+    </table>
+  </div>
+
+  <hr>
+
+  <!-- 3. COMPONENTES -->
+  <div class="secao">
+    <h2>3. O que é um Componente</h2>
+    <p>Um componente React é uma <strong>função JavaScript</strong> que retorna JSX. Cada componente é um arquivo <code>.jsx</code> separado.</p>
+
+    <pre>
+// Estrutura básica de um componente:
+function NomeDoComponente() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Conteúdo aqui&lt;/h1&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default NomeDoComponente  // exporta para usar em outros arquivos</pre>
+
+    <h3>Como usar um componente em outro arquivo:</h3>
+    <pre>
+// App.jsx
+import Hero from './components/Hero'      // importa
+import Skills from './components/Skills'
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Hero /&gt;     {/* usa como tag HTML */}
+      &lt;Skills /&gt;
+    &lt;/div&gt;
+  )
+}</pre>
+  </div>
+
+  <hr>
+
+  <!-- 4. FRAMER MOTION -->
+  <div class="secao">
+    <h2>4. O que é o Framer Motion</h2>
+    <p>Framer Motion é uma biblioteca de animações para React. Em vez de escrever CSS de animação complexo, você adiciona propriedades diretamente nos elementos.</p>
+
+    <pre>npm install framer-motion</pre>
+
+    <h3>Como usar:</h3>
+    <pre>
+import { motion } from 'framer-motion'
+
+// Troca qualquer tag HTML por motion.tag:
+&lt;motion.div
+  initial={{ opacity: 0, y: 50 }}   // estado inicial
+  animate={{ opacity: 1, y: 0 }}    // estado final
+  transition={{ duration: 0.8 }}     // duração
+&gt;
+  Conteúdo animado
+&lt;/motion.div&gt;</pre>
+
+    <h3>Propriedades principais do Framer Motion:</h3>
+    <table>
+      <tr><th>Propriedade</th><th>O que faz</th></tr>
+      <tr><td><code>initial</code></td><td>Estado antes da animação começar</td></tr>
+      <tr><td><code>animate</code></td><td>Estado final da animação (ao carregar)</td></tr>
+      <tr><td><code>whileInView</code></td><td>Anima quando o elemento aparece no scroll</td></tr>
+      <tr><td><code>whileHover</code></td><td>Anima quando o mouse passa por cima</td></tr>
+      <tr><td><code>transition</code></td><td>Controla duração, delay e tipo da animação</td></tr>
+      <tr><td><code>viewport</code></td><td>Configura o scroll (ex: <code>once: true</code> = anima só uma vez)</td></tr>
+    </table>
+  </div>
+
+  <hr>
+
+  <!-- 5. COMPONENTES CRIADOS -->
+  <div class="secao">
+    <h2>5. Componentes Criados</h2>
+
+    <table>
+      <tr><th>Componente</th><th>Arquivo</th><th>Função</th></tr>
+      <tr><td>Navbar</td><td>Navbar.jsx</td><td>Barra de navegação fixa com mudança ao scroll</td></tr>
+      <tr><td>Hero</td><td>Hero.jsx</td><td>Seção inicial com foto, nome e descrição</td></tr>
+      <tr><td>Skills</td><td>Skills.jsx</td><td>Lista de conhecimentos com animação stagger</td></tr>
+      <tr><td>Projects</td><td>Projects.jsx</td><td>Grid de projetos com efeito hover</td></tr>
+      <tr><td>Contact</td><td>Contact.jsx</td><td>Cards de contato com ícones reais</td></tr>
+    </table>
+  </div>
+
+  <hr>
+
+  <!-- 6. ANIMAÇÕES -->
+  <div class="secao">
+    <h2>6. Animações Utilizadas</h2>
+
+    <h3>Animação de entrada — Hero (fade + slide)</h3>
+    <pre>
+&lt;motion.section
+  initial={{ opacity: 0, y: 50 }}  // começa invisível, 50px abaixo
+  animate={{ opacity: 1, y: 0 }}   // termina visível, posição normal
+  transition={{ duration: 0.8 }}
+&gt;</pre>
+
+    <h3>Scroll Reveal + Stagger — Skills</h3>
+    <pre>
+// O "delay: index * 0.15" faz cada item aparecer depois do anterior
+{habilidades.map((item, index) => (
+  &lt;motion.li
+    initial={{ opacity: 0, x: -30 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.4, delay: index * 0.15 }}
+    viewport={{ once: true }}
+  &gt;
+    {item}
+  &lt;/motion.li&gt;
+))}</pre>
+
+    <h3>Hover Interativo — Cards de Projeto</h3>
+    <pre>
+&lt;motion.div
+  whileHover={{ scale: 1.03 }}  // aumenta 3% ao passar o mouse
+  transition={{ duration: 0.2 }}
+&gt;</pre>
+
+    <h3>Navbar com scroll — useState + useEffect</h3>
+    <pre>
+const [scrolled, setScrolled] = useState(false)
+
+useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 50)  // true se rolou mais de 50px
+  }
+  window.addEventListener('scroll', handleScroll)
+  return () => window.removeEventListener('scroll', handleScroll)
+}, [])
+
+// Muda a classe CSS dependendo do estado:
+&lt;nav className={scrolled ? 'nav-scrolled' : 'nav-top'}&gt;</pre>
+  </div>
+
+  <hr>
+
+  <!-- 7. CONCEITOS REACT -->
+  <div class="secao">
+    <h2>7. Conceitos React Aprendidos</h2>
+
+    <h3>useState — guardar valores que mudam</h3>
+    <pre>
+const [scrolled, setScrolled] = useState(false)
+// scrolled = valor atual
+// setScrolled = função para mudar o valor
+// false = valor inicial</pre>
+
+    <h3>useEffect — executar código com efeitos colaterais</h3>
+    <pre>
+useEffect(() => {
+  // código que executa quando o componente aparece na tela
+  window.addEventListener('scroll', handleScroll)
+
+  return () => {
+    // limpeza: remove o listener quando o componente sai da tela
+    window.removeEventListener('scroll', handleScroll)
+  }
+}, []) // [] = executa só uma vez</pre>
+
+    <h3>map() — renderizar listas</h3>
+    <pre>
+const habilidades = ['JavaScript', 'Java', 'Front-end']
+
+// Cria um elemento para cada item da lista:
+{habilidades.map((item, index) => (
+  &lt;li key={index}&gt;{item}&lt;/li&gt;
+))}</pre>
+
+    <h3>import/export — compartilhar código entre arquivos</h3>
+    <pre>
+// No arquivo do componente:
+export default NomeDoComponente
+
+// Em outro arquivo:
+import NomeDoComponente from './components/NomeDoComponente'</pre>
+
+    <h3>className — CSS no React</h3>
+    <pre>
+// HTML usa "class", React usa "className":
+&lt;div className="minha-classe"&gt;&lt;/div&gt;</pre>
+  </div>
+
+  <hr>
+
+  <!-- 8. REQUISITOS -->
+  <div class="secao">
+    <h2>8. Requisitos da Atividade Atendidos</h2>
+
+    <div class="requisito"><span class="check">✔</span><span><strong>React com componentização</strong> — Navbar, Hero, Skills, Projects, Contact</span></div>
+    <div class="requisito"><span class="check">✔</span><span><strong>Framer Motion</strong> — instalado e usado em todos os componentes</span></div>
+    <div class="requisito"><span class="check">✔</span><span><strong>Animação de entrada (fade/slide)</strong> — Hero desliza de baixo para cima ao carregar</span></div>
+    <div class="requisito"><span class="check">✔</span><span><strong>Stagger</strong> — Skills aparecem um após o outro com delay progressivo</span></div>
+    <div class="requisito"><span class="check">✔</span><span><strong>Scroll Reveal</strong> — Skills, Projects e Contact animam ao aparecer no scroll</span></div>
+    <div class="requisito"><span class="check">✔</span><span><strong>Navbar com transição ao scroll</strong> — fundo aparece ao descer a página</span></div>
+    <div class="requisito"><span class="check">✔</span><span><strong>Cards de projetos interativos</strong> — aumentam ao passar o mouse (whileHover)</span></div>
+    <div class="requisito"><span class="check">✔</span><span><strong>Identidade visual</strong> — tema escuro com roxo como cor principal</span></div>
+  </div>
+
+  <hr>
+
+  <!-- 9. CÓDIGO COMPLETO -->
+  <div class="secao">
+    <h2>9. Código Completo dos Componentes</h2>
+
+    <h3>App.jsx</h3>
+    <pre>
+import './App.css'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Skills from './components/Skills'
+import Projects from './components/Projects'
+import Contact from './components/Contact'
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Navbar /&gt;
+      &lt;Hero /&gt;
+      &lt;Skills /&gt;
+      &lt;Projects /&gt;
+      &lt;Contact /&gt;
+      &lt;footer&gt;
+        &lt;p&gt;© 2026 - Davi Rodrigues Monteiro Sampaio&lt;/p&gt;
+      &lt;/footer&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default App</pre>
+
+    <h3>Navbar.jsx</h3>
+    <pre>
+import { useState, useEffect } from "react"
+
+function Navbar() {
+    const [scrolled, setScrolled] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50)
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
+    return (
+        &lt;nav className={scrolled ? 'nav-scrolled' : 'nav-top'}&gt;
+            &lt;span&gt;Davi Rodrigues&lt;/span&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#inicio"&gt;Início&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#skills"&gt;Skills&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#projetos"&gt;Projetos&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#contato"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    )
+}
+
+export default Navbar</pre>
+
+    <h3>Hero.jsx</h3>
+    <pre>
+import { motion } from "framer-motion"
+import foto from "../assets/foto.jpg"
+
+function Hero() {
+    return (
+        &lt;motion.section id="inicio"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="hero-section"
+        &gt;
+            &lt;img src={foto} alt="Davi Rodrigues" className="foto-perfil" /&gt;
+            &lt;div&gt;
+                &lt;h1&gt;Davi Rodrigues Monteiro Sampaio&lt;/h1&gt;
+                &lt;h2&gt;Estudante de Análise e Desenvolvimento de Sistemas&lt;/h2&gt;
+                &lt;p&gt;
+                    Estudante de Tecnologia da Informação na UNIFOR, cursando ADS.
+                    Atuo com assistência técnica de celulares e venda especializada de iPhones.
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/motion.section&gt;
+    )
+}
+
+export default Hero</pre>
+
+    <h3>Skills.jsx</h3>
+    <pre>
+import { motion } from 'framer-motion'
+
+const habilidades = ['JavaScript', 'Java', 'Front-end', 'Versionamento (GitHub)']
+
+function Skills() {
+    return (
+        &lt;section id="skills"&gt;
+            &lt;h2&gt;Conhecimentos&lt;/h2&gt;
+            &lt;ul&gt;
+                {habilidades.map((item, index) => (
+                    &lt;motion.li
+                        key={index}
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: index * 0.15 }}
+                        viewport={{ once: true }}
+                    &gt;
+                        {item}
+                    &lt;/motion.li&gt;
+                ))}
+            &lt;/ul&gt;
+        &lt;/section&gt;
+    )
+}
+
+export default Skills</pre>
+
+    <h3>Projects.jsx</h3>
+    <pre>
+import { motion } from 'framer-motion'
+
+const projetos = [
+  { nome: 'Vendy+', descricao: 'Marketplace focado em microempreendedores.', ano: '2026 (Atual)' },
+  { nome: 'Di-Poly-Opticus', descricao: 'Site para compra e estilização de óculos.', ano: '2026' },
+  { nome: 'Vidioteca Unifor', descricao: 'Organização e controle de acervo digital e audiovisual.', ano: '2025' },
+  { nome: 'NARAA', descricao: 'Loja virtual de roupas femininas.', ano: '2025' },
+  { nome: 'CloudQuiz', descricao: 'Mini-game de perguntas sobre Software em Nuvem.', ano: '2025' },
+  { nome: 'Jogo da Forca', descricao: 'Jogo simples web jogo da forca.', ano: '2025' },
+]
+
+function Projects() {
+    return (
+        &lt;section id="projetos"&gt;
+            &lt;h2&gt;Projetos&lt;/h2&gt;
+            &lt;div className="projetos-grid"&gt;
+                {projetos.map((projeto, index) => (
+                    &lt;motion.div
+                        key={index}
+                        className="projeto-card"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        whileHover={{ scale: 1.03 }}
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: true }}
+                    &gt;
+                        &lt;h3&gt;{projeto.nome}&lt;/h3&gt;
+                        &lt;p&gt;{projeto.descricao}&lt;/p&gt;
+                        &lt;span&gt;{projeto.ano}&lt;/span&gt;
+                    &lt;/motion.div&gt;
+                ))}
+            &lt;/div&gt;
+        &lt;/section&gt;
+    )
+}
+
+export default Projects</pre>
+
+    <h3>Contact.jsx</h3>
+    <pre>
+import { motion } from "framer-motion"
+import { MdEmail } from "react-icons/md"
+import { FaLinkedin, FaGithub } from "react-icons/fa"
+
+const contatos = [
+  {
+    label: "E-mail",
+    valor: "rdavi6965@gmail.com",
+    href: "mailto:rdavi6965@gmail.com",
+    icone: &lt;MdEmail size={36} /&gt;
+  },
+  {
+    label: "LinkedIn",
+    valor: "davi-rodrigues",
+    href: "https://www.linkedin.com/in/davi-rodrigues-b26050188/",
+    icone: &lt;FaLinkedin size={36} /&gt;
+  },
+  {
+    label: "GitHub",
+    valor: "davirodrigues222",
+    href: "https://github.com/davirodrigues222",
+    icone: &lt;FaGithub size={36} /&gt;
+  }
+]
+
+function Contact() {
+  return (
+    &lt;motion.section id="contato"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    &gt;
+      &lt;h2&gt;Contato&lt;/h2&gt;
+      &lt;p className="contato-subtitulo"&gt;Vamos conversar? Me encontre por aqui:&lt;/p&gt;
+      &lt;div className="contato-grid"&gt;
+        {contatos.map((item, index) => (
+          &lt;motion.a
+            key={index}
+            href={item.href}
+            target="_blank"
+            className="contato-card"
+            whileHover={{ scale: 1.05, y: -4 }}
+            transition={{ duration: 0.2 }}
+          &gt;
+            &lt;span className="contato-icone"&gt;{item.icone}&lt;/span&gt;
+            &lt;span className="contato-label"&gt;{item.label}&lt;/span&gt;
+            &lt;span className="contato-valor"&gt;{item.valor}&lt;/span&gt;
+          &lt;/motion.a&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/motion.section&gt;
+  )
+}
+
+export default Contact</pre>
+  </div>
+
+</div>
+
+<div class="rodape">
+  <p><strong>Portfolio React com Framer Motion</strong></p>
+  <p>Davi Rodrigues Monteiro Sampaio — UNIFOR ADS — 2026</p>
+</div>
+
+</body>
+</html>

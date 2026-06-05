@@ -1,6 +1,6 @@
 import { motion, MotionConfig } from "framer-motion";
 
-const habilidades = ['javaScript', 'Java', 'Front-end', 'Versionamento (GitHub)']
+const habilidades = ['javaScript', 'Java', 'Front-end', 'Versionamento (GitHub)','Dados','Ingles (Intermediario)','Back-end']
 
 function Skills(){
     return (

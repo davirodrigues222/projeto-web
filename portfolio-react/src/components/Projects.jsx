@@ -42,12 +42,14 @@ const projetos = [
         return(
             <section id="projetos">
                 <h2>Projetos</h2>
+                 <div className="projetos-grid">
                 {projetos.map((projeto, index) => (
                     <motion.div
                         key={index}
+                        className="projeto-card"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0}}
-                        whileHover={{ scale: 1.03 }}
+                        whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.5}}
                         viewport={{ once: true }}
                         >
@@ -57,6 +59,7 @@ const projetos = [
                         <span>{projeto.ano}</span>
                     </motion.div>
                 ))}
+                </div>
             </section>
         )
     }
